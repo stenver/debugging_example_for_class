@@ -16,7 +16,7 @@ This application is a demonstration of debugging. It contains many intentional b
 
  * The wise words index is >= 7 and none of the wise words are loaded because of list index out of bounds exception
 
-The wise words application is also oblivious of the back and forward button, even though it changes the page history object in a restful way
+ * Completely broken back and forward buttons
 
 # How to run
 
