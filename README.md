@@ -8,13 +8,13 @@ This application will give you wise words, if you press a button
 # Intent
 This application is a demonstration of debugging. It contains many intentional bugs, among which
 
-1. If you run the application and click button on the root page long enough, then the server will start throwing index out of range exceptions
+1. If you run the application and click button on the root page more than 7 times, then the server will start throwing index out of bounds exceptions
 
 2. If you reload the page after you have already asked for some wise words, then there are 2 errors
 
 * The wise words index is < 7 and but you will not get all the wise words, only 1 of a kind
 
-* The wise words index is >= 7 and none of the wise words are loaded because of list index out of bound exception
+* The wise words index is >= 7 and none of the wise words are loaded because of list index out of bounds exception
 
 # How to run
 
