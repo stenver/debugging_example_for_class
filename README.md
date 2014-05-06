@@ -12,9 +12,9 @@ This application is a demonstration of debugging. It contains many intentional b
 
 2. If you reload the page after you have already asked for some wise words, then there are 2 errors
 
-* The wise words index is < 8 and but you will not get all the wise words, only 1 of a kind
+* The wise words index is < 7 and but you will not get all the wise words, only 1 of a kind
 
-* The wise words index is >= 8 and none of the wise words are loaded because of list index out of bound exception
+* The wise words index is >= 7 and none of the wise words are loaded because of list index out of bound exception
 
 # How to run
 
