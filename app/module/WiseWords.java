@@ -19,4 +19,8 @@ public class WiseWords {
             add("exite");
         }};
     }
+
+    public static String getWiseWordsAt(int index) {
+        return getWiseWords().get(index);
+    }
 }
