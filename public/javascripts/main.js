@@ -23,14 +23,8 @@ function sendAjaxRequest(currentNumberOfWiseWords){
         data: { "current_number_of_wise_words": currentNumberOfWiseWords }
     }).success(function(wiseWords) {
         render_wise_words(wiseWords);
-        console.log(wiseWords)
     });
 }
-
-$("#button").click(function(){
-    currentNumberOfWiseWords = getCurrentNumberOfWiseWords();
-    sendAjaxRequest(currentNumberOfWiseWords);
-});
 
 function getMissingWiseWords(currentNumberOfWiseWords){
     for(var i = 0; i < currentNumberOfWiseWords; i++){
@@ -38,9 +32,30 @@ function getMissingWiseWords(currentNumberOfWiseWords){
     }
 }
 
+$("#button").click(function(){
+    currentNumberOfWiseWords = getCurrentNumberOfWiseWords();
+    sendAjaxRequest(currentNumberOfWiseWords);
+});
+
 window.onload=function(){
     var currentNumberOfWiseWords = getCurrentNumberOfWiseWords();
     if(parseInt(currentNumberOfWiseWords) > 0){
         getMissingWiseWords(currentNumberOfWiseWords);
     };
 };
+
+window.onpopstate=function(data){
+    var children = $("#container").children();
+    var validChildFound = false;
+    for(var i = 0; i < children.length; i++){
+        if(validChildFound){
+            children[i].remove()
+        }
+        else if(children[i].innerHTML === data.state){
+            validChildFound = true;
+        }
+    }
+    if(!validChildFound){
+        sendAjaxRequest(children.length);
+    }
+}
